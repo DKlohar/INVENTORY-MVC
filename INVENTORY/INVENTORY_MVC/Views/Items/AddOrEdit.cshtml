@@ -1,0 +1,42 @@
+﻿@model INVENTORY_MVC.Models.mvcItemModel
+
+@{
+    ViewBag.Title = "AddOrEdit";
+}
+
+<div class="form-body">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(Model => Model.ITEM_NO)
+        
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.ITEM_NAME)
+            @Html.EditorFor(Model => Model.ITEM_NAME)
+            @Html.ValidationMessageFor(Model => Model.ITEM_NAME)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.ITEM_PRICE)
+            @Html.EditorFor(Model => Model.ITEM_PRICE)
+            @Html.ValidationMessageFor(Model => Model.ITEM_PRICE)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.ITEM_DESCRIPTION)
+            @Html.EditorFor(Model => Model.ITEM_DESCRIPTION)
+            @Html.ValidationMessageFor(Model => Model.ITEM_DESCRIPTION)
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn button" />
+            <input type="reset" value="Reset" class="btn button" />
+        </div>
+    }
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
+}
+
